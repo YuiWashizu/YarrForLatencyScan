@@ -1,0 +1,36 @@
+/*
+  ColRowDist
+*/
+#include "fromHitTree.h"
+#include "TFile.h"
+#include "TTree.h"
+#include "TH1.h"
+#include "TH2.h"
+#include <string>
+#include <iostream>
+#include <stdio.h>
+#include <sstream>
+#include <fstream>
+
+void counthits(const std::string& frname="../rootfile.root") {
+  fromHitTree event(t);
+  int ievent;
+  int nevents = t->GetEntries();
+  int ihit;
+  int counthit;
+  for (ievent=0; ievent<nevents; ievent++) {
+    event.GetEntry(ievent);
+    if (event.nhits!=0) {
+      counthit = counthit + event.nhits;
+      countNonZero++;
+      // for (ihit=0; ihit<event.nhits; ihit++) {
+	// col_dist->Fill(event.hit_col[ihit]);
+	// row_dist->Fill(event.hit_row[ihit]);
+	// hitmap->Fill(event.hit_col[ihit], event.hit_row[ihit]);
+      // }
+    }
+  }
+  std::cout << "AllEvents           = " << nevents << std::endl;
+  std::cout << "countNonZeroEvents  = " << countNonZero << std::endl;
+  std::cout << "num of hits per sec = " << counthit/(30*60) << std::endl;
+}
