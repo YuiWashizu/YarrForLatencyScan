@@ -1,7 +1,7 @@
 /*
   LatencyAnalysis
 */
-#undef fromHitTree_cxxs
+#undef fromHitTree_cxx
 
 #include "fromHitTree.h"
 #include "TFile.h"
