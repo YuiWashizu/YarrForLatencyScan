@@ -34,11 +34,12 @@
       {
 	"config": {
 	    "max": 500,
-	    "min": 0,
+	    "min": 490,
 	    "step": 1,
 	    "parameter": "LatencyConfig",
+	    "pixelRegs": [0, 0]
 	},
-	"loopAction": "Rd53aParameterLoop"
+	"loopAction": "Rd53aGlobalFeedback"
       },
       {
         "config": {
