@@ -33,6 +33,7 @@ latencyscanするためのjsonファイル。GlobalRegisterの中のLatencyConfi
 
 ### `./src/scripts/make_HitbusMask.cxx`
 configファイルのPixelRegisterの`"Enable"`と`"Hitbus"`を指定して0や1に変更する
+
 |mode||
 |:-:|:-:|
 |0|50番目のCoreColumnのみをEnable|
