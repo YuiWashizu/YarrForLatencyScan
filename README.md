@@ -32,7 +32,16 @@ latencyscanするためのjsonファイル。GlobalRegisterの中のLatencyConfi
 トリガ数を変更している場合は、1600という値を16xトリガ数に変更する必要がある。
 
 ### `./src/scripts/make_HitbusMask.cxx`
-configファイルのPixel R`"Enable"`と`"Hitbus"`
+configファイルのPixelRegisterの`"Enable"`と`"Hitbus"`を指定して0や1に変更する
+|mode||
+|:-:|:-:|
+|0|50番目のCoreColumnのみをEnable|
+|1|Diff FEの下半分のみEnable|
+|2|400番目のColumnのみをEnable|
+|3|全てのピクセルをDisable|
+|4|400番目のColumnの下半分のみをEnable|
+|5|全てのピクセルのHitbusのみをDisable|
+|6|上半分のHitbusを全てDisable|
 
 ## 正常なデータが返ってこない問題
 ### LatencyScanの分布がおかしい
@@ -52,7 +61,7 @@ configファイルのPixel R`"Enable"`と`"Hitbus"`
  root[1] .x ./analysis/LatencyAnalysisTest.C+("./data/xxxxx_std_latencyscan/JohnDoe_data.root")
  ```
  - 以上を行なった結果
-  - 正常な分布が返ってきた：Diff FEの上半分がNoisyだったことが原因
+ - 正常な分布が返ってきた：Diff FEの上半分がNoisyだったことが原因
   - latencyscanを走らせたが、途中で止まってしまう：そもそもトリガが発行されていない可能性があるため、FWのLogic Analyzerなどでトリガが入力されているか確認する
   - 分布に大きな変化がない、変なまま：`./scripts/make_Hitbusmask`を使って、使用するピクセルをより少なく制限して、再度LatencyScanしてみる
   
