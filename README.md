@@ -63,7 +63,8 @@ configファイルのPixelRegisterの`"Enable"`と`"Hitbus"`を指定して0や1
  root[0] .L ./analysis/fromHitTree.C+
  root[1] .x ./analysis/LatencyAnalysisTest.C+("./data/xxxxx_std_latencyscan/JohnDoe_data.root")
  ```
-  - 以上を行なった結果
+  
+   - 以上を行なった結果
   　- 正常な分布が返ってきた：Diff FEの上半分がNoisyだったことが原因
   　- latencyscanを走らせたが、途中で止まってしまう：そもそもトリガが発行されていない可能性があるため、FWのLogic Analyzerなどでトリガが入力されているか確認する
   　- 分布に大きな変化がない、変なまま：`./scripts/make_Hitbusmask`を使って、使用するピクセルをより少なく制限して、再度LatencyScanしてみる
