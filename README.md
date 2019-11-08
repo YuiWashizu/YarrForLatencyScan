@@ -31,7 +31,7 @@ latencyscanするためのjsonファイル。GlobalRegisterの中のLatencyConfi
 
 ### `./src/analysis/LatencyScanTest.C`
 `std_latencyscan.json`を走らせた結果を解析し、LatencyConfig値とイベント数の関係をプロットするコード<br>
-トリガ数を変更している場合は、1600という値を16xトリガ数に変更する必要がある。
+トリガ数を変更している場合は、34行目の1600という値を16x(トリガ数)に変更する必要がある。
 
 ### `./src/scripts/make_HitbusMask.cxx`
 configファイルのPixelRegisterの`"Enable"`と`"Hitbus"`を指定して0や1に変更する
